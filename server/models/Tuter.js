@@ -35,6 +35,6 @@ const tuterSchema = new Schema(
   }
 );
 
-const Tuter = model('tuter', TuterSchema);
+const Tuter = model('tuter', tuterSchema);
 
 module.exports = Tuter;
