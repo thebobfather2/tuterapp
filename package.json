@@ -1,19 +1,30 @@
 {
-    "name": "Tuter",
-    "version": "1.0.0",
-    "description": "An app connecting students with tutors.",
-    "main": "server/server.js",
-    "scripts": {
-      "start": "node server/server.js",
-      "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-      "install": "cd server && npm i && cd ../client && npm i",
-      "build": "cd client && npm run build"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "concurrently": "^5.1.0"
-    }
+  "name": "tuterapp",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebobfather2/tuterapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebobfather2/tuterapp/issues"
+  },
+  "homepage": "https://github.com/thebobfather2/tuterapp#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.12.0",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0"
   }
-  
+}
