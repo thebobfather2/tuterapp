@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import AppNavbar from './Navbar.js';
+
 
 function App() {
     const [page, setPage] = useState("Home");
@@ -12,7 +14,8 @@ function App() {
   
     return (
       <div>
-        <h1>Tuter App</h1>
+        
+        <h1>Tuter App from Tuterapp.js</h1>
         {/* <Header 
         categories={categories}
         page={page}
