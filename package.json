@@ -2,7 +2,7 @@
   "name": "tuterapp",
   "version": "1.0.0",
   "engines": {
-    "node": ">=14.0.0"
+    "node": "14.17.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server/server.js",
