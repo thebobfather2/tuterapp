@@ -1,7 +1,7 @@
 
 
 
-const tuters = () => {
+const Tuters = () => {
     return (
         <div>
             <h1>Tuters</h1>
@@ -13,4 +13,4 @@ const tuters = () => {
 }
 
 
-export default tuters;
+export default Tuters;
