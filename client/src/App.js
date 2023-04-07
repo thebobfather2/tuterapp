@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
-import Tuters from './pages/Tuters';
+import Tuters from './pages/tuters';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
