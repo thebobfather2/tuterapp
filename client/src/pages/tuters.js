@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from "../components/Card";
 
-const Tuters = () => {
+const tuters = () => {
     return (
         <div>
             <Card
@@ -23,4 +23,4 @@ const Tuters = () => {
     };
 
 
-export default Tuters;
+export default tuters;
