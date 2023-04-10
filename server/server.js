@@ -7,6 +7,7 @@ const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
+
 const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
 
 
@@ -58,13 +59,13 @@ mongodb.connect(
   }
 );
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
 app.post('/', (req, res) => {
   // Use db connection to add a document
-  db.collection('studentsDB').insertOne({name: req.body.name}), (err, result) => { 
+  db.collection('tuters').insertOne({name: req.body.name}), (err, result) => { 
       if (err) throw err;
       res.json(result);
     }
@@ -73,12 +74,10 @@ app.post('/', (req, res) => {
 
 app.get('/', (req, res) => {
   // Use db connection to find all documents in collection
-  db.collection('tuter')
-    .find()
-    .toArray((err, results) => {
-      if (err) throw err;
-      res.send(results);
-    });
+  db.collection('tuter').find((err, result) => {
+    if (err) throw err;
+    res.send(result);
+  })
 });
 
 
