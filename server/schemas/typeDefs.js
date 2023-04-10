@@ -17,7 +17,6 @@ type Student {
     _id: ID!
     first: String!
     last: String!
-    homework: String!
     assignments: [Assignment]!
     }
     
