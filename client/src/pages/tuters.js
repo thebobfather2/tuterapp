@@ -4,7 +4,8 @@ import Card from "../components/Card";
 
 const tuters = () => {
     return (
-        <div>
+        <main className={`p-3`} style={{}}>
+        <div className={`p-3`}>
             <Card
                 imageUrl="/img/tuter1.jpg"
                 imageAlt="Bryan"
@@ -20,7 +21,7 @@ const tuters = () => {
                 buttonText="Learn more"
             />
              <Card
-                imageUrl="/img/tuter3add.png"
+                imageUrl="/img/tuter3.png"
                 imageAlt="Sarah Jacobs"
                 title="Sarah Jacobs"
                 description="Sarah specializes in makeup and hairstyling."
@@ -30,6 +31,7 @@ const tuters = () => {
             homeworkData={homeworkData}
             /> */}
         </div>
+        </main>
       );
     };
 
