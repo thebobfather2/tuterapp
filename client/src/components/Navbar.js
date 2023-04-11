@@ -2,7 +2,7 @@ import React from 'react';
 function Navbar({ currentPage, handlePageChange }) {
     console.log(currentPage);
     return (
-        <nav>
+        <nav style={{padding: '10px'}}>
             <ul className="nav">
             <li className="nav-item">
                 <a

@@ -3,7 +3,7 @@ import React from 'react';
 
 function About () {
     return (
-        <section>
+        <section className={`p-3`}>
             <h2>About</h2>
             <h3>Tuter</h3>
             {/* <img
