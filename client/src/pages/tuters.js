@@ -13,10 +13,10 @@ const tuters = () => {
                 buttonText="Learn more"
             />
             <Card
-                imageUrl="/img/tuter1.jpg"
-                imageAlt="Sarah Jacobs"
-                title="Sarah Jacobs"
-                description="Sarah has experience teaching subjects ranging from Korean, English, Computer Science and Writing."
+                imageUrl="/img/tuter2.png"
+                imageAlt="Pierre"
+                title="Pierre"
+                description="Pierre is totally not Bryan. He teaches French."
                 buttonText="Learn more"
             />
             {/* <homeworkCard

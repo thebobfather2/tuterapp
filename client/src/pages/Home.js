@@ -7,6 +7,7 @@ function Home () {
         <section>
             <h2>Tuter Home</h2>
             {/* return <image={{Sarah}}/> */}
+            <img src="/img/tuterlogo.png" style={{ width: '300px' }} />
             <h3>With Tuter App, you can easily connect with tuters online and send them any questions or notes you have. As a bonus, you can meet online face to face to discuss your homework at any time! Click the Tuters tab to connect today!</h3>
         </section>
     )
