@@ -27,6 +27,14 @@ const tuters = () => {
                 description="Sarah specializes in makeup and hairstyling."
                 buttonText="Learn more"
             />
+
+            <Card
+                imageUrl="/img/tuter4.png"
+                imageAlt="Naz Yasar"
+                title="Naz Yasar"
+                description="Turkish baklava master."
+                buttonText="Learn more"
+            />
             {/* <homeworkCard
             homeworkData={homeworkData}
             /> */}
