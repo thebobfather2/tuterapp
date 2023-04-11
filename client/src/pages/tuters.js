@@ -12,10 +12,10 @@ const tuters = () => {
                 buttonText="Learn more"
             />
             <Card
-                imageUrl="/img/tuter1.jpg"
-                imageAlt="Sarah"
-                title="Sarah"
-                description="Sarah has experience with react, CSS, html, and javascript."
+                imageUrl="/img/tuter2.png"
+                imageAlt="Pierre"
+                title="Pierre"
+                description="Pierre is totally not Bryan. He teaches French."
                 buttonText="Learn more"
             />
         </div>
