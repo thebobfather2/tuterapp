@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from "../components/Card";
+// import homeworkCard from '../components/homeworkCard';
 
 const tuters = () => {
     return (
@@ -18,6 +19,16 @@ const tuters = () => {
                 description="Pierre is totally not Bryan. He teaches French."
                 buttonText="Learn more"
             />
+             <Card
+                imageUrl="/img/tuter2.png"
+                imageAlt="Sarah Jacobs"
+                title="Sarah Jacobs"
+                description="Sarah specializes in makeup and hairstyling."
+                buttonText="Learn more"
+            />
+            {/* <homeworkCard
+            homeworkData={homeworkData}
+            /> */}
         </div>
       );
     };

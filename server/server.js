@@ -1,11 +1,13 @@
 const express = require('express');
 const mongodb = require('mongodb').MongoClient;
 const { ApolloServer } = require('apollo-server-express');
-// const path = require('path');
+const path = require('path');
 const db = require('./config/connection');
-// const routes = require('./routes');
+// const routes = require('./routes.js');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
+const mongoose = require('mongoose');
+
 
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
@@ -45,16 +47,19 @@ const startApolloServer = async (typeDefs, resolvers) => {
   startApolloServer(typeDefs, resolvers);
  
   // Creates a connection to a MongoDB instance and returns the reference to the database
-mongodb.connect(
+mongoose.connect(
   // Defines connection between app and MongoDB instance
   connectionString,
   // Sets connection string parser and Server Discover and Monitoring engine to true and avoids warning
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  { useNewUrlParser: true, 
+    useFindAndModify: false,
+    useUnifiedTopology: true },
   (err, client) => {
     // Use client.db() constructor to add new db instance
-    db = client.db();
+    const db = mongoose.connection;
+    dbb = client.db();
     app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`);
+      console.log(`Successfully connected at http://localhost:${port}`);
     });
   }
 );

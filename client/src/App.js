@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Tuters from './pages/tuters';
+const mongoose = require('mongoose');
 
 
 const httpLink = createHttpLink({
