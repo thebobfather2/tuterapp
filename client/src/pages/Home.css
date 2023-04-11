@@ -1,0 +1,14 @@
+.MainContainer {
+    /* background-color: #b8C655; */
+    /* background-color: #ABDCD6; */
+    background-color: #F3E47D;
+    color: #f18750;
+    text-shadow: 2px 2px #00000050;
+    text-align: center;
+}
+
+.mainText {
+    padding-bottom: 50px;
+    color: black;
+    text-shadow: none;
+}

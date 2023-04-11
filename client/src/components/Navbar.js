@@ -2,10 +2,9 @@ import React from 'react';
 function Navbar({ currentPage, handlePageChange }) {
     console.log(currentPage);
     return (
-        <nav style={{padding: '10px'}}>
-            <ul className="nav">
-            <li className="nav-item">
-                <a
+        <div>
+        <nav>
+                <a style={{ padding: "30px" }}
                     href="#home"
                     onClick={() => handlePageChange('Home')}
                     // This is a conditional (ternary) operator that checks to see if the current page is "Home"
@@ -14,9 +13,7 @@ function Navbar({ currentPage, handlePageChange }) {
                 >
                     Home
                 </a>
-            </li>
-            <li className="nav-item">
-                <a
+                <a style={{ padding: "30px" }}
                     href="#about"
                     onClick={() => handlePageChange('About')}
                     // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
@@ -24,9 +21,7 @@ function Navbar({ currentPage, handlePageChange }) {
                 >
                     About
                 </a>
-            </li>
-            <li className="nav-item">
-                <a
+                <a style={{ padding: "30px" }}
                     href="#tuters"
                     onClick={() => handlePageChange('Tuters')}
                     // Check to see if the currentPage is `Tuters`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
@@ -34,10 +29,8 @@ function Navbar({ currentPage, handlePageChange }) {
                 >
                     Tuters
                 </a>
-            </li>
-            
-        </ul>
         </nav>
+        </div>
     )
 }
 export default Navbar;
