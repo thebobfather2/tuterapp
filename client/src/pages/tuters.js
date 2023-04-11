@@ -20,7 +20,7 @@ const tuters = () => {
                 buttonText="Learn more"
             />
              <Card
-                imageUrl="/img/tuter3add.png"
+                imageUrl="/img/tuter3.png"
                 imageAlt="Sarah Jacobs"
                 title="Sarah Jacobs"
                 description="Sarah specializes in makeup and hairstyling."
