@@ -1,11 +1,13 @@
 const { Schema, Types } = require('mongoose');
+const mongoose = require('mongoose');
+
 
 const homeworkSchema = new Schema(
   {
-    assignmentId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    // assignmentId: {
+    //   type: Schema.Types.ObjectId,
+    //   default: () => new Types.ObjectId(),
+    // },
     homeworkName: {
       type: String,
       required: true,
@@ -34,4 +36,6 @@ const homeworkSchema = new Schema(
   }
 );
 
-module.exports = homeworkSchema;
+const homework = mongoose.model('homework', homeworkSchema);
+
+module.exports = homework;
