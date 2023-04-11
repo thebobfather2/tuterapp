@@ -1,4 +1,7 @@
 # Tuter
+
+<img width="476" alt="tuter_screengrab" src="https://user-images.githubusercontent.com/107475188/231051942-19379375-4592-4e7c-a3d6-176d9b216993.png">
+
 ![MIT](https://img.shields.io/badge/license-mit-blue)
 ## Table of Contents
 - [Description](#description)
