@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Tuters from './pages/tuters';
-const mongoose = require('mongoose');
+// import AuthNavbar from './components/AuthNavbar.js';
+import Auth from './utils/auth';
 
 
 const httpLink = createHttpLink({
@@ -26,62 +27,69 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: 'graphql',
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
 
-// function App() {
-//   return (
-//     <ApolloProvider client={client}>
-    
-//     <main className={`p-3`} style={{}}>
-//       <div style={{minHeight:'80vh'}}>
-//       </div>
-//     </main>
-//       <Router>
-//         <>
-//           <Header />
-          
-//           <Route>
-//             <Route
-//               path='/'
-//               element={<Tuters />}
-//             />
-            
-//           </Route>
-          
-//         </>
-//       </Router>
-//     </ApolloProvider>
-//   );
-// }
 function App() {
-  const [currentPage, setCurrentPage] = useState('Home');
-  const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
-    if (currentPage === 'About') {
-      return <About />;
-    }
-    if (currentPage === 'Tuters') {
-      return <Tuters />;
-    }
-    
-  };
-
-  const handlePageChange = (page) => setCurrentPage(page);
-
   return (
+    <ApolloProvider client={client}>
+    
     <main className={`p-3`} style={{}}>
-      <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
       <div style={{minHeight:'80vh'}}>
-      {renderPage()}
       </div>
     </main>
+      <Router>
+        <>
+          <Header />
+          
+          <Routes>
+            <Route
+              path='/'
+              element={<Home />}
+            />
+            <Route
+              path='/about'
+              element={<About />}
+            />
+            <Route
+              path='/tuters'
+              element={<Tuters />}
+            />
+            
+          </Routes>
+          
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
+// function App() {
+//   const [currentPage, setCurrentPage] = useState('Home');
+//   const renderPage = () => {
+//     if (currentPage === 'Home') {
+//       return <Home />;
+//     }
+//     if (currentPage === 'About') {
+//       return <About />;
+//     }
+//     if (currentPage === 'Tuters') {
+//       return <Tuters />;
+//     }
+    
+//   };
+
+//   const handlePageChange = (page) => setCurrentPage(page);
+
+//   return (
+//     <main className={`p-3`} style={{}}>
+//       <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
+//       <div style={{minHeight:'80vh'}}>
+//       {renderPage()}
+//       </div>
+//     </main>
+//   );
+// }
 
 export default App;

@@ -3,7 +3,11 @@ const { Schema, model } = require('mongoose');
 // Create a new Tutor
 const tuterSchema = new Schema(
   {
-    tuterName: {
+    firstname: {
+      type: String,
+      required: true,
+    },
+    lastname: {
       type: String,
       required: true,
     },
@@ -23,6 +27,6 @@ const tuterSchema = new Schema(
   }
 );
 
-const Tuter = model('tuter', tuterSchema);
+const Tuter = model('Tuter', tuterSchema);
 
 module.exports = Tuter;

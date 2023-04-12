@@ -1,16 +1,14 @@
 const express = require('express');
-const mongodb = require('mongodb').MongoClient;
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const db = require('./config/connection');
 // const routes = require('./routes.js');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-const mongoose = require('mongoose');
 
 
 
-const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
+// const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
 
 
 const app = express();
@@ -29,6 +27,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 // app.use(routes);
 
 const startApolloServer = async (typeDefs, resolvers) => {
@@ -46,44 +48,28 @@ const startApolloServer = async (typeDefs, resolvers) => {
 // Call the async function to start the server
   startApolloServer(typeDefs, resolvers);
  
-  // Creates a connection to a MongoDB instance and returns the reference to the database
-mongoose.connect(
-  // Defines connection between app and MongoDB instance
-  connectionString,
-  // Sets connection string parser and Server Discover and Monitoring engine to true and avoids warning
-  { useNewUrlParser: true, 
-    useFindAndModify: false,
-    useUnifiedTopology: true },
-  (err, client) => {
-    // Use client.db() constructor to add new db instance
-    const db = mongoose.connection;
-    dbb = client.db();
-    app.listen(port, () => {
-      console.log(`Successfully connected at http://localhost:${port}`);
-    });
-  }
-);
+ 
 
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 // });
 
-app.post('/', (req, res) => {
-  // Use db connection to add a document
-  db.collection('tuters').insertOne({name: req.body.name}), (err, result) => { 
-      if (err) throw err;
-      res.json(result);
-    }
-  ;
-});
+// app.post('/', (req, res) => {
+//   // Use db connection to add a document
+//   db.collection('tuters').insertOne({name: req.body.name}), (err, result) => { 
+//       if (err) throw err;
+//       res.json(result);
+//     }
+//   ;
+// });
 
-app.get('/', (req, res) => {
-  // Use db connection to find all documents in collection
-  db.collection('tuter').find((err, result) => {
-    if (err) throw err;
-    res.send(result);
-  })
-});
+// app.get('/', (req, res) => {
+//   // Use db connection to find all documents in collection
+//   db.collection('tuter').find((err, result) => {
+//     if (err) throw err;
+//     res.send(result);
+//   })
+// });
 
 
 
