@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+// import SignUpForm from './SignupForm';
+import LoginForm from './LoginForm';
 
-function Navbar({ currentPage, handlePageChange }) {
+function AuthNavbar({ currentPage, handlePageChange }) {
     console.log(currentPage);
     return (
         <div>
@@ -25,8 +28,13 @@ function Navbar({ currentPage, handlePageChange }) {
                 >
                     Tuters
                 </Link>
+                
         </nav>
         </div>
+        
     )
 }
-export default Navbar;
+
+
+
+export default AuthNavbar;
