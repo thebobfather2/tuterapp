@@ -37,7 +37,7 @@ function App() {
     <ApolloProvider client={client}>
     
     <main className={`p-3`} style={{}}>
-      <div style={{minHeight:'80vh'}}>
+      <div>
       </div>
     </main>
       <Router>
