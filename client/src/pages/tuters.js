@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "../components/Card";
-import HomeworkCard from '../components/homeworkCard';
+// import HomeworkCard from '../components/homeworkCard';
 
 const tuters = () => {
     return (
@@ -35,9 +35,9 @@ const tuters = () => {
                 description="Turkish baklava master."
                 buttonText="Learn more"
             />
-            <HomeworkCard
+            {/* <HomeworkCard
             
-            />
+            /> */}
             
         </div>
         </main>
