@@ -1,10 +1,6 @@
 import React from 'react';
 import Card from "../components/Card";
-<<<<<<< HEAD
 import HomeworkCard from '../components/HomeworkCard';
-=======
-// import HomeworkCard from '../components/homeworkCard';
->>>>>>> faea6ad9a7e2214d6528084a0a0344df650314fd
 
 const tuters = () => {
     return (
