@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from "../components/Card";
-import HomeworkCard from '../components/homeworkCard';
+import HomeworkCard from '../components/HomeworkCard';
 
 const tuters = () => {
     return (
-        <main className={`p-3`} style={{}}>
+        <main className={`p-3`} style={{backgroundColor: "#F3E47D"}}>
         <div className={`p-3`}>
             <Card
                 imageUrl="/img/tuter1.jpg"
