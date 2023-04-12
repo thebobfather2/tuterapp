@@ -50,26 +50,26 @@ const startApolloServer = async (typeDefs, resolvers) => {
  
  
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
-// app.post('/', (req, res) => {
-//   // Use db connection to add a document
-//   db.collection('tuters').insertOne({name: req.body.name}), (err, result) => { 
-//       if (err) throw err;
-//       res.json(result);
-//     }
-//   ;
-// });
+app.post('/', (req, res) => {
+  // Use db connection to add a document
+  db.collection('tuters').insertOne({name: req.body.name}), (err, result) => { 
+      if (err) throw err;
+      res.json(result);
+    }
+  ;
+});
 
-// app.get('/', (req, res) => {
-//   // Use db connection to find all documents in collection
-//   db.collection('tuter').find((err, result) => {
-//     if (err) throw err;
-//     res.send(result);
-//   })
-// });
+app.get('/', (req, res) => {
+  // Use db connection to find all documents in collection
+  db.collection('tuter').find((err, result) => {
+    if (err) throw err;
+    res.send(result);
+  })
+});
 
 
 
