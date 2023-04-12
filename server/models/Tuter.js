@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-// Schema to create a course model
+// Create a new Tutor
 const tuterSchema = new Schema(
   {
     tuterName: {

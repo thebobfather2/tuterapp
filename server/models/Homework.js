@@ -1,41 +1,22 @@
-const { Schema, Types } = require('mongoose');
-const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 
-
-const homeworkSchema = new Schema(
-  {
-    // assignmentId: {
-    //   type: Schema.Types.ObjectId,
-    //   default: () => new Types.ObjectId(),
-    // },
-    homeworkName: {
+const homeworkSchema = new Schema({
+  homeworkName: [
+    {
       type: String,
-      required: true,
-      maxlength: 50,
-      minlength: 4,
-      default: 'Homework',
     },
-    problem: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    question: {
-      type: String,
-      required: true,
-      maxlength: 200,
-      minlength: 4,
-      default: 'Review'
-    },
+  ],
+  description: {
+    type: String,
+    required: true,
   },
-  {
-    toJSON: {
-      getters: true,
-    },
-    id: false,
+  homeworkQuestion: {
+    type: String,
+    required: true,
   }
-);
+});
 
-const homework = mongoose.model('homework', homeworkSchema);
+module.exports = homeworkSchema;
 
-module.exports = homework;
+
+
