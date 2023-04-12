@@ -17,14 +17,14 @@ type Student {
     _id: ID!
     first: String!
     last: String!
-    assignments: [Assignment]!
+    homework: [Homework]!
     }
     
-type Assignment {
+type Homework {
     assignmentId: ID!
     homeworkName: String!
-    problem: String!
-    question: String!
+    description: String!
+    homeworkQuestion: String!
 }
 type Auth {
     token: ID!
