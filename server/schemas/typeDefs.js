@@ -2,26 +2,28 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 type User {
     _id: ID!
-    userName: String!
+    username: String!
     email: String!
     password: String!
 }
 
 type Tuter {
     _id: ID!
-    tuterName: String!
+    firstname: String!
+    lastname: String!
     students: [Student]!
 }
 
 type Student {
     _id: ID!
-    first: String!
-    last: String!
+    firstname: String!
+    lastname: String!
+    assignedTuter: Tuter!
     homework: [Homework]!
     }
     
 type Homework {
-    assignmentId: ID!
+    homeworkId: ID!
     homeworkName: String!
     description: String!
     homeworkQuestion: String!
