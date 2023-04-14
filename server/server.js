@@ -6,6 +6,10 @@ const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
@@ -70,6 +74,19 @@ app.get('/', (req, res) => {
     res.send(result);
   })
 });
+
+async function addUser(username, email, password) {
+  try {
+    await client.connect();
+    const collection = client.db("TuterApp").collection("users");
+    const result = await collection.insertOne({ username, email, password });
+    console.log(`User ${username} added with id ${result.insertedId}`);
+  } finally {
+    await client.close();
+  }
+};
+
+
 
 
 

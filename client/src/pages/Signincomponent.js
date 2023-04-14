@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addUser } from './path/to/userAPI';
 
 function Signincomponent() {
   const [username, setUsername] = useState('');
@@ -7,6 +8,13 @@ function Signincomponent() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    addUser(username, email, password)
+      .then((response) => {
+        // Handle successful response
+      })
+      .catch((error) => {
+        // Handle error
+      });
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
