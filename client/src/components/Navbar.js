@@ -28,6 +28,13 @@ function AuthNavbar({ currentPage, handlePageChange }) {
                 >
                     Tuters
                 </Link>
+
+                <Link style={{ padding: "30px" }}
+                    to="/Signin"
+                    // Check to see if the currentPage is `Tuters`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+                >
+                    Sign Up / Sign In
+                </Link>
                 
         </nav>
         </div>
