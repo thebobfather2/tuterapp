@@ -75,16 +75,18 @@ app.get('/', (req, res) => {
   })
 });
 
-async function addUser(username, email, password) {
-  try {
-    await client.connect();
-    const collection = client.db("TuterApp").collection("users");
-    const result = await collection.insertOne({ username, email, password });
-    console.log(`User ${username} added with id ${result.insertedId}`);
-  } finally {
-    await client.close();
-  }
-};
+app.use(express.json());
+
+app.post('/addUser', (req, res) => {
+  const { username, email, password } = req.body;
+  // Do something with the received data (e.g. add it to a database)
+  console.log(`Received data: ${username}, ${email}, ${password}`);
+  res.send('Data received!');
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
 
 
 

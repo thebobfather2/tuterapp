@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addUser } from 'server.js';
+import axios from 'axios';
 
 function Signincomponent() {
   const [username, setUsername] = useState('');
@@ -8,7 +8,7 @@ function Signincomponent() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addUser(username, email, password)
+    axios.post('/addUser', { username, email, password })
       .then((response) => {
         // Handle successful response
       })
