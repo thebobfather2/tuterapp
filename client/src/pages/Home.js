@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Home.css"
+import "/Home.css"
 // import Sarah from '../../images/IMG_1517.jpg';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
