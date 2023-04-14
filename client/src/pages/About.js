@@ -3,9 +3,9 @@ import React from 'react';
 
 function About () {
     return (
-        <section className={`p-3`}>
+        <section className={`p-3`} style={{backgroundColor: "#F3E47D", padding: "50px"}} >
             <h2 style={{textAlign: "center"}} >About</h2>
-            <h3>Tuter</h3>
+            <h3 style={{textAlign: "left"}}>Tuter</h3>
             {/* <img
             src={aboutImg}
             className="p-2"

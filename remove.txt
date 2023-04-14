@@ -1,0 +1,3 @@
+mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority
+
+heroku config:set MONGODB_URI="mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority"
