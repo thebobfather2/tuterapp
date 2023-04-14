@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "ln -s ../../server/server.js ./src/pages/server.js"
+    "postinstall": "ln -sf ../../server/server.js ./src/pages/server.js"
   },
   "eslintConfig": {
     "extends": [
