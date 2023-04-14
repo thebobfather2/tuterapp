@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Tuters from './pages/tuters';
+import Signin from './pages/Signin';
 // import AuthNavbar from './components/AuthNavbar.js';
 import Auth from './utils/auth';
 
@@ -56,6 +57,10 @@ function App() {
             <Route
               path='/tuters'
               element={<Tuters />}
+            />
+            <Route
+              path='/Signin'
+              element={<Signin />}
             />
             
           </Routes>
