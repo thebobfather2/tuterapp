@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addUser } from '../../server/server.js';
+import { addUser } from 'server.js';
 
 function Signincomponent() {
   const [username, setUsername] = useState('');
