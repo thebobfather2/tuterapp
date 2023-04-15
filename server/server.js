@@ -32,6 +32,8 @@ app.post('/addUser', (req, res) => {
   res.send('Data received!');
 });
 
+const port = process.env.PORT || 3000; // define the port number
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
