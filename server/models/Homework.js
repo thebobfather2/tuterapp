@@ -16,7 +16,7 @@ const homeworkSchema = new Schema({
     required: true,
   },
   homeworkQuestion: {
-    type: String,
+    type: Number,
     required: true,
   }
 });
