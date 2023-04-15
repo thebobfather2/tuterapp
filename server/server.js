@@ -23,6 +23,19 @@ const server = new ApolloServer({
   context: authMiddleware
 });
 
+app.use(express.json());
+
+app.post('/addUser', (req, res) => {
+  const { username, email, password } = req.body;
+  // Do something with the received data (e.g. add it to a database)
+  console.log(`Received data: ${username}, ${email}, ${password}`);
+  res.send('Data received!');
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -73,19 +86,6 @@ app.get('/', (req, res) => {
     if (err) throw err;
     res.send(result);
   })
-});
-
-app.use(express.json());
-
-app.post('/addUser', (req, res) => {
-  const { username, email, password } = req.body;
-  // Do something with the received data (e.g. add it to a database)
-  console.log(`Received data: ${username}, ${email}, ${password}`);
-  res.send('Data received!');
-});
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
 });
 
 
