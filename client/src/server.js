@@ -5,14 +5,22 @@ const db = require('./config/connection');
 // const routes = require('./routes.js');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoose = require('mongoose');
 
 
 
-const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
+const MONGODB_URI = 'mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority'
+
+mongoose.connect('mongodb://127.0.0.1:27017/TuterApp', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose is connected!')
+})
+
+// const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
 
 
 const app = express();
@@ -74,21 +82,5 @@ app.get('/', (req, res) => {
     res.send(result);
   })
 });
-
-app.use(express.json());
-
-app.post('/addUser', (req, res) => {
-  const { username, email, password } = req.body;
-  // Do something with the received data (e.g. add it to a database)
-  console.log(`Received data: ${username}, ${email}, ${password}`);
-  res.send('Data received!');
-});
-
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
-
-
-
 
 
