@@ -32,8 +32,10 @@ app.post('/addUser', (req, res) => {
   res.send('Data received!');
 });
 
+
+
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on port ${PORT}`);
 });
 
 app.use(express.urlencoded({ extended: false }));
