@@ -24,8 +24,9 @@ const tuters = () => {
                 imageUrl="/img/tuter3.png"
                 imageAlt="Sarah Jacobs"
                 title="Sarah Jacobs"
-                description="Sarah specializes in makeup and hairstyling."
-                buttonText="Learn more"
+                description="Sarah Jacobs specializes in teaching English, Korean, Writing, and Web Development. She has served as an English teacher of all ages for over two years and has three completed books in her portfolio. Sarah believes that learning is best achieved through celebrating every growing moment. Set up your complimentary tutoring session with Sarah today!"
+                buttonText="Sarah's Book Recommendations"
+                linkUrl="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
             />
 
             <Card
