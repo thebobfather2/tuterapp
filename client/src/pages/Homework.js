@@ -1,25 +1,27 @@
 import React from 'react';
-import Card from "../components/Card";
+import HomeworkCard from '../components/HomeworkCard';
 
-const tuters = () => {
+const homework = () => {
     return (
         <main className={`p-3`} style={{backgroundColor: "#F3E47D"}}>
         <div className={`p-3`}>
-            <Card
-                imageUrl="/img/tuter1.jpg"
-                imageAlt="Bryan"
-                title="Bryan"
-                description="Bryan specializes in web3 development and has experience with react, CSS, html, and javascript."
-                buttonText="Learn more"
+            <HomeworkCard
+                
+                imageUrl="/img/arborday.png"
+                imageAlt="Arbor Day Essay"
+                title="English Homework 4/10"
+                description="Arbor Day Essay - Predict, define and comprhend the given text. Answer each question carefully with complete sentences."
+                question="Please help me study the vocabulary words and how to comprehend the text with 2 pieces of evidence from the text."
+                
             />
-            <Card
+            <HomeworkCard
                 imageUrl="/img/tuter2.png"
                 imageAlt="Pierre"
                 title="Pierre"
                 description="Pierre is totally not Bryan. He teaches French."
                 buttonText="Learn more"
             />
-             <Card
+             <HomeworkCard
                 imageUrl="/img/tuter3.png"
                 imageAlt="Sarah Jacobs"
                 title="Sarah Jacobs"
@@ -28,16 +30,14 @@ const tuters = () => {
                 linkUrl="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
             />
 
-            <Card
+            <HomeworkCard
                 imageUrl="/img/tuter4.png"
                 imageAlt="Naz Yasar"
                 title="Naz Yasar"
                 description="Turkish baklava master."
                 buttonText="Learn more"
             />
-            {/* <HomeworkCard
-            
-            /> */}
+           
             
         </div>
         </main>
@@ -45,4 +45,4 @@ const tuters = () => {
     };
 
 
-export default tuters;
+export default homework;
