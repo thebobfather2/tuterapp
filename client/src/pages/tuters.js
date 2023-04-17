@@ -17,7 +17,7 @@ const tuters = () => {
                 imageUrl="/img/tuter2.png"
                 imageAlt="Pierre"
                 title="Pierre"
-                description="Pierre is totally not Bryan. He teaches French."
+                description="A good education can change anyone. A good teacher can change everything."
                 buttonText="Learn more"
                 buttonUrl="https://github.com/thebobfather2"
             />
