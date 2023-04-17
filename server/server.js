@@ -5,14 +5,8 @@ const db = require('./config/connection');
 // const routes = require('./routes.js');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-const basicAuth = require('express-basic-auth');
 
-const auth = basicAuth({
-  users: {
-    admin: '123',
-    user: '456',
-  },
-});
+
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
 
@@ -75,22 +69,6 @@ app.get('/', (req, res) => {
     if (err) throw err;
     res.send(result);
   })
-});
-
-app
-  .use(express.static(path.join(__dirname, '/client/build')))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
-
-app.get('/authenticate', auth, (req, res) => {
-  if (req.auth.user === 'admin') {
-    res.send('admin');
-  } else if (req.auth.user === 'user') {
-    res.send('user');
-  }
 });
 
 
