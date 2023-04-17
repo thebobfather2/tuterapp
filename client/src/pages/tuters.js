@@ -11,6 +11,7 @@ const tuters = () => {
                 title="Bryan"
                 description="Bryan specializes in web3 development and has experience with react, CSS, html, and javascript."
                 buttonText="Learn more"
+                buttonUrl="https://github.com/thebobfather2"
             />
             <Card
                 imageUrl="/img/tuter2.png"
@@ -18,6 +19,7 @@ const tuters = () => {
                 title="Pierre"
                 description="Pierre is totally not Bryan. He teaches French."
                 buttonText="Learn more"
+                buttonUrl="https://github.com/thebobfather2"
             />
              <Card
                 imageUrl="/img/sarah.jpg"
@@ -32,8 +34,9 @@ const tuters = () => {
                 imageUrl="/img/tuter4.png"
                 imageAlt="Naz Yasar"
                 title="Naz Yasar"
-                description="Turkish baklava master."
+                description="Naz has a heart for teaching math, science and computer science. She typically tutors middle and high school students but began her tutoring careers with elementary students. She has since worked as a part time teacher at local schools and seeks to help more students achieve their goals! Click more to start tutoring with Naz today."
                 buttonText="Learn more"
+                buttonUrl="https://github.com/nazyasar"
             />
             {/* <HomeworkCard
             

@@ -7,7 +7,7 @@ const Card = (props) => {
       <div className="card-content">
         <h2 style={{paddingTop: "20px", textAlign: "center", display: "block", margin: "0 auto"}}>{props.title}</h2>
         <p style={{padding: "20px", textAlign: "center", display: "block", margin: "0 auto"}}>{props.description}</p>
-        <button style={{textAlign: "center", display: "block", margin: "0 auto"}}>{props.buttonText}{props.buttonUrl}</button>
+        <a href={props.buttonUrl}><button style={{textAlign: "center", display: "block", margin: "0 auto"}}>{props.buttonText}</button></a>
       </div>
     </div>
   );
