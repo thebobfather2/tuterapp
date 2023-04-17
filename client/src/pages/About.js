@@ -19,7 +19,9 @@ function About () {
             Tutors will be able to best prepare for their sessions by bringing the right books, materials, and research to help
             students achieve their educational goals. Take a look at our tutors today and see what you can learn!
             <br></br>
-            <br></br>Click here for the list of tutors.
+            <br></br>
+            
+            <a href="https://tuter.herokuapp.com/tuters">Click here for the list of tutors.</a>
           </h6>
             
         </section>
