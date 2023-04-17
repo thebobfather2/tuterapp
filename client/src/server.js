@@ -5,22 +5,16 @@ const db = require('./config/connection');
 // const routes = require('./routes.js');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-const mongoose = require('mongoose');
+const basicAuth = require('express-basic-auth');
 
-
-
-const MONGODB_URI = 'mongodb+srv://user1:tuterapp123@tuterapp.ax7darj.mongodb.net/?retryWrites=true&w=majority'
-
-mongoose.connect('mongodb://127.0.0.1:27017/TuterApp', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+const auth = basicAuth({
+  users: {
+    admin: '123',
+    user: '456',
+  },
 });
 
-mongoose.connection.on('connected', () => {
-  console.log('Mongoose is connected!')
-})
-
-// const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
+const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
 
 
 const app = express();
@@ -81,6 +75,22 @@ app.get('/', (req, res) => {
     if (err) throw err;
     res.send(result);
   })
+});
+
+app
+  .use(express.static(path.join(__dirname, '/client/build')))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
+
+app.get('/authenticate', auth, (req, res) => {
+  if (req.auth.user === 'admin') {
+    res.send('admin');
+  } else if (req.auth.user === 'user') {
+    res.send('user');
+  }
 });
 
 

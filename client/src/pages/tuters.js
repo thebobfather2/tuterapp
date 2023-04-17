@@ -20,7 +20,7 @@ const tuters = () => {
                 buttonText="Learn more"
             />
              <Card
-                imageUrl="/img/tuter3.png"
+                imageUrl="/img/sarah.jpg"
                 imageAlt="Sarah Jacobs"
                 title="Sarah Jacobs"
                 description="Sarah Jacobs specializes in teaching English, Korean, Writing, and Web Development. She has served as an English teacher of all ages for over two years and has three completed books in her portfolio. Sarah believes that learning is best achieved through celebrating every growing moment. Set up your complimentary tutoring session with Sarah today!"
