@@ -1,30 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 function Signincomponent() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [username, setUsername] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
 
-  const handleSubmit = (event) => {
+  const [addUser, { error }] = useMutation(ADD_USER);
+  useEffect(() => {
+    if (error) {
+      console.log(error);
+    }
+  }, [error]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log(formData);
+    try {
+      const { data } = await addUser({
+        variables: {...formData }
+      });
+      Auth.login(data.addUser.token);
+    }
+    catch (e) {
+      console.error(e);
+    }
+    setFormData({
+      username: '',
+      email: '',
+      password: ''
+    });
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input type="text" name="username" value={formData.username} onChange={handleInputChange} />
       </label>
       <label>
         Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
       <label>
         Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input type="password" name="password" value={formData.password} onChange={handleInputChange} />
       </label>
       <button type="submit">Submit</button>
     </form>

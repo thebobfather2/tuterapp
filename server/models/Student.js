@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
 
 //import homework schema for student
 const homeworkSchema = require('./Homework');

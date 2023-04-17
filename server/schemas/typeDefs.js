@@ -4,7 +4,6 @@ type User {
     _id: ID!
     username: String!
     email: String!
-    password: String!
 }
 
 type Tuter {
@@ -19,7 +18,7 @@ type Student {
     firstname: String!
     lastname: String!
     assignedTuter: Tuter!
-    homework: [Homework]!
+    homework: [Homework]
     }
     
 type Homework {
@@ -41,7 +40,7 @@ type Query {
 }
 
 type Mutation {
-    addUser(userName: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 }
 `

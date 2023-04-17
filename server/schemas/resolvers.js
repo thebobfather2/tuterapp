@@ -1,5 +1,5 @@
-const { User } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -30,9 +30,9 @@ const resolvers = {
       const token = signToken(user);
       return {user, token};
     },
-    addUser: async (parent, { email, password, username }) => {
+    addUser: async (parent, args) => {
       const user = await User.create(
-        {email, password, username}
+        args
       );
       const token = signToken(user);
       return {user, token};
