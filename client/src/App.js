@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Tuters from './pages/tuters';
 import Signin from './pages/Signin';
+import Homework from './pages/Homework';
 // import AuthNavbar from './components/AuthNavbar.js';
 import Auth from './utils/auth';
 
@@ -62,7 +63,10 @@ function App() {
               path='/Signin'
               element={<Signin />}
             />
-            
+            <Route
+            path='/Homework'
+            element={<Homework />}
+            />
           </Routes>
           
         </>
