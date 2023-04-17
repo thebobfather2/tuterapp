@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import aboutImg from '../../images/IMG_1517.jpg';
 
 function About () {
@@ -20,8 +21,10 @@ function About () {
             students achieve their educational goals. Take a look at our tutors today and see what you can learn!
             <br></br>
             <br></br>
+            <Link to="/tuters">
+              Click here for the list of tutors.
+            </Link>
             
-            <a href="https://tuter.herokuapp.com/tuters">Click here for the list of tutors.</a>
           </h6>
             
         </section>
